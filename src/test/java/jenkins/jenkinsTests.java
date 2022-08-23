@@ -17,12 +17,12 @@ public class jenkinsTests {
 
 
     @Test
-    public void apiTest(){
+    public void apiTest() {
 
         RequestSpecification spec = new RequestSpecBuilder().setBaseUri("https://restful-booker.herokuapp.com").build();
 
         //Set the base url and path params
-        spec.pathParams("first","booking","second",3);
+        spec.pathParams("first", "booking", "second", 331);
 
 
         //Send the Get request and get the response
@@ -34,15 +34,15 @@ public class jenkinsTests {
 
         Map<String,Object> bookingdates = (Map)actualdata.get("bookingdates");
 
-        assertEquals("Jim",actualdata.get("firstname"));
-        assertEquals("Jackson",actualdata.get("lastname"));
-        assertEquals(982,actualdata.get("totalprice"));
-     //   assertEquals(false,actualdata.get("depositpait"));
+        assertEquals("Dane",actualdata.get("firstname"));
+        assertEquals("Vera",actualdata.get("lastname"));
+        assertEquals(111,actualdata.get("totalprice"));
+        assertEquals(true,actualdata.get("depositpaid"));
 
-        assertEquals("2018-12-06",bookingdates.get("checkin"));
-        assertEquals("2019-09-05",bookingdates.get("checkout"));
+        assertEquals("2018-01-01",bookingdates.get("checkin"));
+        assertEquals("2019-01-01",bookingdates.get("checkout"));
 
-        response.then().body("Jim",equalTo("firstname"));
+     //   response.then().body("Dane",equalTo("firstname"));
 
     }
 
